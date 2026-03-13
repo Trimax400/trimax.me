@@ -1,4 +1,5 @@
-// Define types for our data to ensure type safety across the app
+// --- Interfaces ---
+
 export interface Project {
   title: string;
   description: string;
@@ -13,9 +14,16 @@ export interface NavLink {
   href: string;
 }
 
+export type SocialPlatform = "GitHub" | "LinkedIn" | "Twitter" | "Mail";
+
 export interface SocialLink {
-  platform: string;
+  platform: SocialPlatform;
   url: string;
+}
+
+export interface Skill {
+  name: string;
+  category: "Frontend" | "Backend" | "DevOps" | "Tools";
 }
 
 // --- Content ---
@@ -28,6 +36,15 @@ export const NAV_LINKS: NavLink[] = [
 
 export const SOCIAL_LINKS: SocialLink[] = [
   { platform: "GitHub", url: "https://github.com/Trimax400" },
+];
+
+export const SKILLS: Skill[] = [
+  { name: "Next.js", category: "Frontend" },
+  { name: "TypeScript", category: "Frontend" },
+  { name: "Tailwind CSS", category: "Frontend" },
+  { name: "Node.js", category: "Backend" },
+  { name: "Docker", category: "DevOps" },
+  { name: "CI/CD", category: "DevOps" },
 ];
 
 export const PROJECTS: Project[] = [
