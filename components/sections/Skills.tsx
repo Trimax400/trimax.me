@@ -78,7 +78,7 @@ export default function Skills({ skills }: { skills: Skill[] }) {
     <section id="skills" className="py-15">
       {/* Section Header */}
       <h2 className="text-3xl font-bold mb-10 text-center text-foreground transition-colors">
-        Technical Stack
+        My Skills
       </h2>
 
       {/* Categories Grid */}
