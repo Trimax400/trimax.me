@@ -2,16 +2,26 @@
 
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-import { Sun, Moon, Monitor } from "lucide-react"; // Import des icônes SVG
+import { Sun, Moon, Monitor } from "lucide-react";
 
 export const ThemeSwitcher = () => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
+  /**
+   * Hydration safety:
+   * Next.js server-side rendering cannot know the user's theme preference (stored in localStorage).
+   * We use 'mounted' to ensure the component only renders its interactive state on the client.
+   */
   useEffect(() => {
     setMounted(true);
   }, []);
 
+  /**
+   * Placeholder during hydration:
+   * Returns a div with matching dimensions to prevent layout shift (CLS) 
+   * while the client-side JS determines the active theme.
+   */
   if (!mounted) return <div className="w-32 h-9" />;
 
   const modes = [
@@ -21,6 +31,10 @@ export const ThemeSwitcher = () => {
   ];
 
   return (
+    /**
+     * Segmented Control UI:
+     * A pill-shaped container using backdrop-blur for a modern effect.
+     */
     <div className="flex items-center p-1 rounded-full border border-card-border bg-card/50 backdrop-blur-sm shadow-sm">
       {modes.map((mode) => {
         const Icon = mode.icon;
@@ -33,14 +47,14 @@ export const ThemeSwitcher = () => {
             className={`
               relative flex items-center justify-center h-8 w-10 rounded-full transition-all duration-200 cursor-pointer
               ${isActive 
-                ? "bg-primary text-primary-foreground shadow-md scale-105 z-10" 
-                : "text-muted hover:text-foreground opacity-60 hover:opacity-100 hover:bg-muted/10"
+                ? "bg-primary text-primary-foreground shadow-md scale-105 z-10" // Active state with lift effect
+                : "text-muted hover:text-foreground opacity-60 hover:opacity-100 hover:bg-muted/10" // Inactive state
               }
             `}
             title={mode.label}
           >
+            {/* Lucide Icons with consistent stroke width for a clean look */}
             <Icon size={16} strokeWidth={2.5} />
-        
           </button>
         );
       })}
