@@ -1,6 +1,7 @@
 // --- Interfaces ---
 
 export interface Project {
+    id: string;
     title: string;
     description: string;
     tags: string[];
@@ -29,10 +30,10 @@ export interface Skill {
 // --- Content ---
 
 export const NAV_LINKS: NavLink[] = [
-    { label: "About", href: "#about" },
-    { label: "Skills", href: "#skills" },
-    { label: "Projects", href: "#projects" },
-    { label: "Contact", href: "#contact" },
+    { label: "about", href: "#about" },
+    { label: "skills", href: "#skills" },
+    { label: "projects", href: "#projects" },
+    { label: "contact", href: "#contact" },
 ];
 
 export const SOCIAL_LINKS: SocialLink[] = [
@@ -78,6 +79,7 @@ export const SKILLS: Skill[] = [
 
 export const PROJECTS: Project[] = [
     {
+        id: "portfolio",
         title: "Portfolio Website",
         description: "My personal portfolio built with Next.js, Tailwind CSS, and Docker. Automated deployment via GitHub Actions to an OVH VPS.",
         tags: ["Next.js", "TypeScript", "Tailwind", "Docker", "CI/CD"],
@@ -86,6 +88,7 @@ export const PROJECTS: Project[] = [
         image: "/projects/portfolio.png",
     },
     {
+        id: "interactive-one",
         title: "Interactive Project One",
         description: "A placeholder for a project..",
         tags: ["React", "API Integration", "Node.js"],
