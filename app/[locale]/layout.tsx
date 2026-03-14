@@ -4,7 +4,7 @@ import "./globals.css";
 import { NAV_LINKS } from "@/lib/data";
 import { ThemeProvider } from "@/components/shared/ThemeProvider";
 import { ThemeSwitcher } from "@/components/shared/ThemeSwitcher";
-import { NextIntlClientProvider, hasLocale } from 'next-intl';
+import { NextIntlClientProvider, hasLocale, useTranslations } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing } from "../i18n/routing";
 import LocaleSwitcher from "@/components/shared/LocaleSwitcher";
@@ -27,6 +27,7 @@ type Props = {
 };
 
 export default function RootLayout({ children, params }: Props) {
+  const t = useTranslations('layout');
   return (
     /**
      * suppressHydrationWarning is used here because 'next-themes' 
@@ -59,7 +60,7 @@ export default function RootLayout({ children, params }: Props) {
                           href={link.href}
                           className="text-xs font-mono uppercase tracking-widest hover:text-primary transition-colors duration-200"
                         >
-                          {link.label}
+                          {t(`nav.${link.label}`)}
                         </a>
                       </li>
                     ))}

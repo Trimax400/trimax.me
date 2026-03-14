@@ -1,6 +1,8 @@
 import { Project } from "@/lib/data";
+import { useTranslations } from "next-intl";
 
 export default function ProjectCards({ project }: { project: Project }) {
+  const t = useTranslations('projects');
   return (
     /**
      * Main container using the semantic 'card' colors defined in globals.css.
@@ -34,11 +36,11 @@ export default function ProjectCards({ project }: { project: Project }) {
 
         {/* Project Title and Description using theme-aware foreground/muted colors */}
         <h3 className="text-xl font-bold text-foreground mb-2 transition-colors">
-          {project.title}
+          {t(`list.${project.id}.title`)}
         </h3>
         
         <p className="text-muted text-sm leading-relaxed mb-6 transition-colors">
-          {project.description}
+          {t(`list.${project.id}.description`)}
         </p>
 
         {/* Action Buttons:
@@ -52,7 +54,7 @@ export default function ProjectCards({ project }: { project: Project }) {
             rel="noopener noreferrer"
             className="text-sm font-semibold text-foreground hover:text-primary transition-colors focus:outline-none"
           >
-            Code GitHub →
+            {t('actions.code')} →
           </a>
           
           {/* Conditional rendering for the Live Demo button */}
@@ -63,7 +65,7 @@ export default function ProjectCards({ project }: { project: Project }) {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-primary-foreground bg-primary rounded-lg hover:opacity-90 shadow-md transition-all active:scale-95 focus:outline-none"
             >
-              Live Demo
+              {t('actions.demo')}
             </a>
           )}
         </div>

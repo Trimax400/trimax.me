@@ -4,6 +4,7 @@ import { SOCIAL_LINKS } from "@/lib/data";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 import { Mail, ExternalLink } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 /**
  * Contact Section:
@@ -13,6 +14,7 @@ import { Mail, ExternalLink } from "lucide-react";
 export default function Contact() {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const t = useTranslations('contact');
 
   useEffect(() => {
     setMounted(true);
@@ -30,12 +32,11 @@ export default function Contact() {
   return (
     <section id="contact" className="py-20 text-center">
       <h2 className="text-3xl font-bold mb-6 text-foreground transition-colors">
-        Get In Touch
+        {t("title")}
       </h2>
       
-      <p className="text-muted max-w-xl mx-auto mb-10 leading-relaxed transition-colors">
-        I'm currently looking for new opportunities. Whether you have a question 
-        or just want to say hi, I'll try my best to get back to you!
+      <p className="text-muted max-w-xl mx-auto mb-10 leading-relaxed transition-colors whitespace-pre-line">
+        {t("sub")}
       </p>
 
       <div className="flex flex-wrap justify-center gap-4">
