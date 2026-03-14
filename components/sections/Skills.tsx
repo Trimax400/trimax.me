@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Skill } from "@/lib/data";
 import { useTheme } from "next-themes";
+import { useTranslations } from "next-intl";
 
 interface SkillBadgeProps {
   skill: Skill;
@@ -73,12 +74,13 @@ export default function Skills({ skills }: { skills: Skill[] }) {
    * Derive unique categories from the skill list.
    */
   const categories = Array.from(new Set(skills.map((s) => s.category)));
+  const t = useTranslations('skills');
 
   return (
     <section id="skills" className="py-15">
       {/* Section Header */}
       <h2 className="text-3xl font-bold mb-10 text-center text-foreground transition-colors">
-        My Skills
+        {t("title")}
       </h2>
 
       {/* Categories Grid */}

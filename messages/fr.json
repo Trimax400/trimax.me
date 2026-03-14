@@ -1,0 +1,40 @@
+{
+    "hero": {
+        "sub": "Je suis un développeur Fullstack spécialisé dans la création d'applications web robustes.\nDécouvrez mes projets ci-dessous.",
+        "hello": "Salut, moi c'est",
+        "projects": "Mes projets",
+        "contact": "Contactez moi"
+    },
+    "skills": {
+        "title": "Stack Technique"
+    },
+    "projects": {
+        "title": "Sélection de projets",
+        "list": {
+            "portfolio": {
+                "title": "Site Portfolio",
+                "description": "Mon portfolio personnel construit avec Next.js, Tailwind CSS et Docker. Déploiement automatisé via GitHub Actions sur un VPS OVH."
+            },
+            "interactive-one": {
+                "title": "Projet Interactif Un",
+                "description": "Un projet en cours de développement..."
+            }
+        },
+        "actions": {
+            "code": "Code GitHub",
+            "demo": "Live Demo"
+        }
+    },
+    "contact": {
+        "title": "Discutons ensemble",
+        "sub": "Je suis actuellement à l'écoute de nouvelles opportunités. Que vous ayez une question ou simplement envie de dire bonjour, je ferai de mon mieux pour vous répondre !"
+    },
+    "layout": {
+        "nav": {
+            "about": "À propos",
+            "skills": "Compétences",
+            "projects": "Projets",
+            "contact": "Contact"
+        }
+    }
+}
