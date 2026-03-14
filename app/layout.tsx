@@ -29,18 +29,20 @@ export default function RootLayout({
      */
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${inter.className} bg-background text-foreground antialiased transition-colors duration-300`}
+        className={`${inter.className} bg-background text-foreground antialiased transition-colors duration-300 relative`}
       >
-        {/* ThemeProvider: 
-          Wraps the application to provide theme context (light/dark/system).
-          'attribute="class"' enables Tailwind's dark mode strategy.
-        */}
+        <div className="bg-mesh" />
+
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           
-          {/* Persistent Header: Uses glassmorphism effects (backdrop-blur) */}
-          <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-card-border">
+          {/*Header*/}
+          <header className="fixed top-0 w-full z-50 bg-background/70 backdrop-blur-md border-b border-card-border/50">
             <nav className="mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
-              <span className="font-bold text-xl tracking-tighter">Fullstack Developer</span>
+              <div className="flex items-center gap-2">
+                <span className="font-bold text-xl tracking-tighter font-mono italic">
+                  Fullstack<span className="text-primary text-sm not-italic ml-1">.dev</span>
+                </span>
+              </div>
 
               <div className="flex items-center gap-6 md:gap-10">
                 {/* Desktop Navigation Menu */}
@@ -49,7 +51,7 @@ export default function RootLayout({
                     <li key={link.href}>
                       <a
                         href={link.href}
-                        className="text-sm font-medium hover:text-primary transition-colors"
+                        className="text-xs font-mono uppercase tracking-widest hover:text-primary transition-colors duration-200"
                       >
                         {link.label}
                       </a>
@@ -58,7 +60,7 @@ export default function RootLayout({
                 </ul>
 
                 {/* Decorative vertical divider */}
-                <div className="h-5 w-[1px] bg-card-border hidden md:block" />
+                <div className="h-5 w-[1px] bg-card-border/50 hidden md:block" />
 
                 <ThemeSwitcher />
               </div>
@@ -68,9 +70,9 @@ export default function RootLayout({
           {/* Main page content injected here */}
           {children}
 
-          {/* Site-wide Footer */}
-          <footer className="py-10 border-t border-card-border text-center text-sm text-muted">
-            © {new Date().getFullYear()} - Built with Next.js & Docker
+          {/*Footer*/}
+          <footer className="py-12 border-t border-card-border/30 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-muted">
+            © {new Date().getFullYear()} <span className="text-primary/50 mx-2">//</span> Built with Next.js & Docker
           </footer>
         </ThemeProvider>
       </body>

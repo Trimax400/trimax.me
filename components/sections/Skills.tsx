@@ -89,7 +89,7 @@ export default function Skills({ skills }: { skills: Skill[] }) {
             className="p-6 rounded-2xl border border-card-border bg-card/50 min-w-[260px] flex-1 sm:flex-none shadow-sm"
           >
             {/* Category header with increased tracking for a modern tech aesthetic */}
-            <h3 className="text-[10px] font-black text-primary uppercase tracking-[0.2em] mb-5 text-center opacity-70">
+            <h3 className="text-[12px] font-black text-primary uppercase tracking-[0.2em] mb-5 text-center opacity-70">
               {category}
             </h3>
             <div className="flex flex-wrap gap-2.5 justify-center">
