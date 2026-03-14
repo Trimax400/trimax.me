@@ -7,6 +7,7 @@ import { ThemeSwitcher } from "@/components/shared/ThemeSwitcher";
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing } from "../i18n/routing";
+import LocaleSwitcher from "@/components/shared/LocaleSwitcher";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -68,6 +69,7 @@ export default function RootLayout({ children, params }: Props) {
                   <div className="h-5 w-[1px] bg-card-border/50 hidden md:block" />
 
                   <ThemeSwitcher />
+                  <LocaleSwitcher />
                 </div>
               </nav>
             </header>
