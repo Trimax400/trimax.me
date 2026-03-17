@@ -1,4 +1,5 @@
 import { Project } from "@/lib/data";
+import { List } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 export default function ProjectCards({ project }: { project: Project }) {

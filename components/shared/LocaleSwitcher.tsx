@@ -29,7 +29,7 @@ export default function LocaleSwitcher() {
                     appearance-none cursor-pointer
                     pl-10 pr-10 py-2.5
                     text-sm font-semibold
-                    bg-card/40 backdrop-blur-md
+                    bg-card/50 backdrop-blur-md 
                     border border-card-border
                     rounded-2xl text-foreground
                     transition-all duration-300
