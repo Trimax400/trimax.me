@@ -5,9 +5,8 @@ import { NAV_LINKS } from "@/lib/data";
 import { ThemeProvider } from "@/components/shared/ThemeProvider";
 import { ThemeSwitcher } from "@/components/shared/ThemeSwitcher";
 import { NextIntlClientProvider, hasLocale, useTranslations } from 'next-intl';
-import { notFound } from 'next/navigation';
-import { routing } from "../i18n/routing";
 import LocaleSwitcher from "@/components/shared/LocaleSwitcher";
+import Script from 'next/script';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,12 +27,23 @@ type Props = {
 
 export default function RootLayout({ children, params }: Props) {
   const t = useTranslations('layout');
+  console.log("ID UMAMI REÇU :", process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID);
   return (
     /**
      * suppressHydrationWarning is used here because 'next-themes' 
      * updates the <html> element's class attribute on the client.
      */
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <head>
+        {process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && (
+          <Script
+            async
+            src={process.env.NEXT_PUBLIC_UMAMI_URL}
+            data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
+            strategy="afterInteractive"
+          />
+        )}
+      </head>
       <body
         className={`${inter.className} bg-background text-foreground antialiased transition-colors duration-300 relative`}
       >
