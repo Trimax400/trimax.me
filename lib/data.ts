@@ -91,7 +91,7 @@ export const PROJECTS: Project[] = [
         id: "taxes",
         title: "Tax Visualizer",
         description: "A project developed as part of the Master’s degree in Computer Science at the University of Le Havre Normandie. Produced in pairs, this application visualizes statistics on specific taxes collected in France over selected years.",
-        tags: ["API Integration", "Next.js", "TypeScript", "Symfony", "PHP", "D3"],
+        tags: ["API Integration", "Next.js", "TypeScript", "Symfony", "D3"],
         githubUrl: "https://github.com/Trimax400/tax-visualizer",
         liveUrl: "https://taxes.trimax400.com",
         image: "/projects/taxvisualizer.png",
