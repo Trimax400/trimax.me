@@ -15,7 +15,7 @@
                 "title": "Portfolio Website",
                 "description": "My personal portfolio built with Next.js, Tailwind CSS, and Docker. Automated deployment via GitHub Actions to an OVH VPS."
             },
-            "interactive-one": {
+            "taxes": {
                 "title": "Tax Visualizer",
                 "description": "A project developed as part of the Master’s degree in Computer Science at the University of Le Havre Normandie. Produced in pairs, this application visualizes statistics on specific taxes collected in France over selected years."
             }
