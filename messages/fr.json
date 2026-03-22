@@ -18,6 +18,10 @@
             "taxes": {
                 "title": "Tax Visualizer",
                 "description": "Projet réalisé en binôme dans le cadre du Master 2 Informatique à l'Université le Havre Normandie. Cette application permet d'analyser et de visualiser les statistiques de diverses taxes perçues en France sur plusieurs années."
+            },
+            "jobs": {
+                "title": "JobTracker",
+                "description": "JobTracker est un CRM personnel conçu pour centraliser, organiser et suivre l'avancement de vos candidatures d'emploi au sein d'un tableau de bord unique. Il permet de piloter sa recherche grâce à des indicateurs de performance en temps réel et un système de filtrage avancé pour ne jamais manquer une opportunité."
             }
         },
         "actions": {

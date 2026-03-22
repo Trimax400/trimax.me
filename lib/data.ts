@@ -96,4 +96,13 @@ export const PROJECTS: Project[] = [
         liveUrl: "https://taxes.trimax400.com",
         image: "/projects/taxvisualizer.png",
     },
+    {
+        id: "jobs",
+        title: "JobTracker",
+        description: "JobTracker is a personal CRM designed to centralize, organize, and track the progress of your job applications within a single dashboard. It empowers users to manage their job search through real-time performance metrics and advanced filtering, ensuring no opportunity ever slips through the cracks.",
+        tags: ["Ruby on Rails", "Hotwire", "Tailwind", "SQLite", "Docker"],
+        githubUrl: "https://github.com/Trimax400/JobTracker",
+        liveUrl: "https://jobs.trimax400.com",
+        image: "/projects/jobtracker.png",
+    },
 ];

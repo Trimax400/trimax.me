@@ -18,6 +18,10 @@
             "taxes": {
                 "title": "Tax Visualizer",
                 "description": "A project developed as part of the Master’s degree in Computer Science at the University of Le Havre Normandie. Produced in pairs, this application visualizes statistics on specific taxes collected in France over selected years."
+            },
+            "jobs": {
+                "title": "JobTracker",
+                "description": "JobTracker is a personal CRM designed to centralize, organize, and track the progress of your job applications within a single dashboard. It empowers users to manage their job search through real-time performance metrics and advanced filtering, ensuring no opportunity ever slips through the cracks."
             }
         },
         "actions": {
