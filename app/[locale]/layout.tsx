@@ -27,7 +27,6 @@ type Props = {
 
 export default function RootLayout({ children, params }: Props) {
   const t = useTranslations('layout');
-  console.log("ID UMAMI REÇU :", process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID);
   return (
     /**
      * suppressHydrationWarning is used here because 'next-themes' 

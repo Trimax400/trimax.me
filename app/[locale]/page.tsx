@@ -14,7 +14,7 @@ export default function Home() {
   ];
 
   return (
-    <main className="max-w-5xl mx-auto px-4 pt-32 pb-20 min-h-screen">
+    <main className="max-w-7xl mx-auto px-4 pt-32 pb-20 min-h-screen">
       {sections.map((section, index) => (
         <SectionWrapper 
           key={section.id} 

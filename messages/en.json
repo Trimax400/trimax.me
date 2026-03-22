@@ -10,6 +10,7 @@
     },
     "projects": {
         "title": "Featured Projects",
+        "scroll_hint": "Scroll to explore →",
         "list": {
             "portfolio": {
                 "title": "Portfolio Website",
@@ -26,7 +27,9 @@
         },
         "actions": {
             "code": "GitHub Code",
-            "demo": "Live Demo"
+            "demo": "Live Demo",
+            "show_more": "Show more",
+            "show_less": "Show less"
         }
     },
     "contact": {
