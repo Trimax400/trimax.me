@@ -2,7 +2,7 @@ import { useLocale } from 'next-intl';
 import { useRouter, usePathname } from '@/app/i18n/navigation';
 import { useTransition } from 'react';
 
-export const LOCALES = ['fr', 'en', 'ja', 'de', 'es', 'it', 'pt', 'ru', 'zh', 'ko'];
+export const LOCALES = ['fr', 'en'];
 
 export const useLocaleSwitcher = () => {
   const [isPending, startTransition] = useTransition();
