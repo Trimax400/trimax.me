@@ -25,6 +25,7 @@ export interface SocialLink {
 export interface Skill {
     name: string;
     category: "Frontend" | "Backend" | "DevOps" | "Tools";
+    hasIcon: boolean;
 }
 
 // --- Content ---
@@ -43,38 +44,38 @@ export const SOCIAL_LINKS: SocialLink[] = [
 
 export const SKILLS: Skill[] = [
     // --- Frontend ---
-    { name: "React", category: "Frontend" },
-    { name: "Next.js", category: "Frontend" },
-    { name: "React Native", category: "Frontend" },
-    { name: "TypeScript", category: "Frontend" },
-    { name: "JavaScript", category: "Frontend" },
-    { name: "Tailwind CSS", category: "Frontend" },
-    { name: "Bulma", category: "Frontend" },
+    { name: "React", category: "Frontend", hasIcon: true },
+    { name: "Next.js", category: "Frontend", hasIcon: true },
+    { name: "React Native", category: "Frontend", hasIcon: false },
+    { name: "TypeScript", category: "Frontend", hasIcon: true },
+    { name: "JavaScript", category: "Frontend", hasIcon: true },
+    { name: "Tailwind CSS", category: "Frontend", hasIcon: true },
+    { name: "Bulma", category: "Frontend", hasIcon: true },
 
     // --- Backend ---
-    { name: "Node.js", category: "Backend" },
-    { name: "PHP", category: "Backend" },
-    { name: "Symfony", category: "Backend" },
-    { name: "Python", category: "Backend" },
-    { name: "Flask", category: "Backend" },
-    { name: "Java", category: "Backend" },
+    { name: "Node.js", category: "Backend", hasIcon: true },
+    { name: "PHP", category: "Backend", hasIcon: true },
+    { name: "Symfony", category: "Backend", hasIcon: true },
+    { name: "Python", category: "Backend", hasIcon: true },
+    { name: "Flask", category: "Backend", hasIcon: true },
+    { name: "Java", category: "Backend", hasIcon: false },
 
-    // --- Databases (Category: Backend or Tools) ---
-    { name: "SQLite", category: "Backend" },
-    { name: "MySQL", category: "Backend" },
-    { name: "PostgreSQL", category: "Backend" },
-    { name: "MongoDB", category: "Backend" },
+    // --- Databases ---
+    { name: "SQLite", category: "Backend", hasIcon: true },
+    { name: "MySQL", category: "Backend", hasIcon: true },
+    { name: "PostgreSQL", category: "Backend", hasIcon: true },
+    { name: "MongoDB", category: "Backend", hasIcon: true },
 
     // --- DevOps & Tools ---
-    { name: "Docker", category: "DevOps" },
-    { name: "GIT", category: "DevOps" },
-    { name: "CI/CD", category: "DevOps" },
-    { name: "VirtualBox", category: "DevOps" },
-    { name: "LaTeX", category: "Tools" },
-    { name: "Swagger", category: "Tools" },
-    { name: "Trello", category: "Tools" },
-    { name: "Linux", category: "Tools" },
-    { name: "Bash", category: "Tools" },
+    { name: "Docker", category: "DevOps", hasIcon: true },
+    { name: "GIT", category: "DevOps", hasIcon: true },
+    { name: "CI/CD", category: "DevOps", hasIcon: false },
+    { name: "VirtualBox", category: "DevOps", hasIcon: true },
+    { name: "LaTeX", category: "Tools", hasIcon: true },
+    { name: "Swagger", category: "Tools", hasIcon: true },
+    { name: "Trello", category: "Tools", hasIcon: true },
+    { name: "Linux", category: "Tools", hasIcon: true },
+    { name: "Bash", category: "Tools", hasIcon: false },
 ];
 
 export const PROJECTS: Project[] = [

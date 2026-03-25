@@ -7,6 +7,7 @@ import { ThemeSwitcher } from "@/components/shared/ThemeSwitcher";
 import { NextIntlClientProvider, hasLocale, useTranslations } from 'next-intl';
 import LocaleSwitcher from "@/components/shared/LocaleSwitcher";
 import Script from 'next/script';
+import { SettingsMenu } from "@/components/ui/SettingsMenu";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -54,6 +55,7 @@ export default function RootLayout({ children, params }: Props) {
             {/*Header*/}
             <header className="fixed top-0 w-full z-50 bg-background/70 backdrop-blur-md border-b border-card-border/50">
               <nav className="mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
+
                 <div className="flex items-center gap-2">
                   <span className="font-bold text-xl tracking-tighter font-mono italic">
                     Fullstack<span className="text-primary text-sm not-italic ml-1">.dev</span>
@@ -78,8 +80,13 @@ export default function RootLayout({ children, params }: Props) {
                   {/* Decorative vertical divider */}
                   <div className="h-5 w-[1px] bg-card-border/50 hidden md:block" />
 
-                  <ThemeSwitcher />
-                  <LocaleSwitcher />
+                  <div className="hidden md:flex items-center gap-4">
+                    <ThemeSwitcher />
+                    <LocaleSwitcher />
+                  </div>
+
+                  <SettingsMenu />
+
                 </div>
               </nav>
             </header>
