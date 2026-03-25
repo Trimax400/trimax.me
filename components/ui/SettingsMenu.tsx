@@ -4,11 +4,14 @@ import { useState, useRef, useEffect } from "react";
 import { Settings, Languages, Check } from "lucide-react";
 import { useLocaleSwitcher } from '@/hooks/use-locale-switcher';
 import { ThemeSwitcher } from "../shared/ThemeSwitcher";
+import { useTranslations } from "next-intl";
 
 export const SettingsMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const { locale, switchLocale, locales, getLanguageName } = useLocaleSwitcher();
+
+  const t = useTranslations('mobile');
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -31,7 +34,7 @@ export const SettingsMenu = () => {
         <div className="absolute right-0 mt-3 w-64 p-4 rounded-2xl border border-card-border bg-background shadow-2xl z-50 flex flex-col gap-5 animate-in fade-in zoom-in slide-in-from-top-2 duration-200">
           
           <div className="flex flex-col gap-3">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-muted">Theme</p>
+            <p className="text-[10px] font-bold uppercase tracking-widest text-muted">{t('theme')}</p>
             <div className="flex justify-center">
                <ThemeSwitcher />
             </div>
@@ -42,7 +45,7 @@ export const SettingsMenu = () => {
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-2">
                <Languages size={14} className="text-muted" />
-               <p className="text-[10px] font-bold uppercase tracking-widest text-muted">Language</p>
+               <p className="text-[10px] font-bold uppercase tracking-widest text-muted">{t('language')}</p>
             </div>
             
             <div className="relative">

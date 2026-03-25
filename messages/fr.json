@@ -43,5 +43,9 @@
             "projects": "Projets",
             "contact": "Contact"
         }
+    },
+    "mobile": {
+        "theme": "Thème",
+        "language": "Langue"
     }
 }
