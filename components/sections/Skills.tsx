@@ -56,7 +56,7 @@ const SkillBadge = ({ skill }: SkillBadgeProps) => {
       {/* If the image fails to load (e.g., 404 from the CDN), we unmount the <img> tag
           entirely rather than showing a broken icon or an empty square.
       */}
-      {!imageError && (
+      {!imageError && skill.hasIcon !== false && (
         <img
           src={iconUrl}
           alt=""
