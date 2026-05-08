@@ -23,6 +23,10 @@
             "jobs": {
                 "title": "JobTracker",
                 "description": "JobTracker is a personal CRM designed to centralize, organize, and track the progress of your job applications within a single dashboard. It empowers users to manage their job search through real-time performance metrics and advanced filtering, ensuring no opportunity ever slips through the cracks."
+            },
+            "lifey": {
+                "title": "Lifey",
+                "description": "Lifey is a modern, fast, and secure personal finance application designed to give you complete control over your budget. Track your daily expenses, manage recurring bills, and visualize your financial future with ease."
             }
         },
         "actions": {
