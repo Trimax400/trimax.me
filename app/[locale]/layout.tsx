@@ -4,7 +4,8 @@ import "./globals.css";
 import { NAV_LINKS } from "@/lib/data";
 import { ThemeProvider } from "@/components/shared/ThemeProvider";
 import { ThemeSwitcher } from "@/components/shared/ThemeSwitcher";
-import { NextIntlClientProvider, hasLocale, useTranslations } from 'next-intl';
+import { NextIntlClientProvider } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import LocaleSwitcher from "@/components/shared/LocaleSwitcher";
 import Script from 'next/script';
 import { SettingsMenu } from "@/components/ui/SettingsMenu";
@@ -26,14 +27,15 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
-export default function RootLayout({ children, params }: Props) {
-  const t = useTranslations('layout');
+export default async function RootLayout({ children, params }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'layout' });
   return (
     /**
      * suppressHydrationWarning is used here because 'next-themes' 
      * updates the <html> element's class attribute on the client.
      */
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+    <html lang={locale} className="scroll-smooth" suppressHydrationWarning>
       <head>
         {process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && (
           <Script
